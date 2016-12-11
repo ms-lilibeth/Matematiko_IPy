@@ -1,3 +1,5 @@
+import clr
+
 class Player:
     def __init__(self, field_lgth):
         self._field = [[0 for j in range(field_lgth)] for i in range(field_lgth)]
