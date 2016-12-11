@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>153e9333-2b2a-48dc-bbb3-9d2a25357b52</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Matematiko_IronPython.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -16,6 +16,7 @@
     <OutputPath>.</OutputPath>
     <Name>Matematiko_IronPython</Name>
     <RootNamespace>Matematiko_IronPython</RootNamespace>
+    <DebugStdLib>True</DebugStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,10 +27,25 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Matematiko_IronPython.py" />
+    <Compile Include="Game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main.py" />
+    <Compile Include="NotificationWindow.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlayWindow.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Matematiko_IronPython.xaml">
+    <Content Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NotificationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PlayWindow.xaml">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
@@ -60,7 +76,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.5" />
     <InterpreterReference Include="{80659ab7-4d53-4e0c-8588-a766116cbd46}\2.7" />
+    <InterpreterReference Include="{fcc291aa-427c-498c-a4d7-4502d6449b8c}\2.7" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

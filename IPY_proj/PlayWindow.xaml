@@ -1,0 +1,145 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Математико: два игрока" MinHeight="450" MinWidth="525" 
+        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+        ScrollViewer.VerticalScrollBarVisibility="Visible" Closing="Window_Closing">
+
+    <ScrollViewer>
+        <Grid Name="MainGrid" Background="#FFFBFF9A" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!-- Текущая карточка -->
+            <Label Name="LBL_Current_card"
+            Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2" 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               BorderThickness="3" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" 
+               MinWidth="100" Background="Khaki">
+                12
+            </Label>
+            <Label Name="player1_Name" 
+                   Grid.Row="1" Grid.Column="0"
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontFamily="TruthCYR Regular" FontSize="14">
+                Первый игрок
+            </Label>
+            <Label Name="player2_Name"
+                   Grid.Row="1" Grid.Column="1"
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontFamily="TruthCYR Regular" FontSize="14">
+                Второй игрок
+            </Label>
+            <!-- Поле для первого игрока (слева) -->
+
+            <Grid Name="First_player_field" Grid.Row="2" Grid.Column="0"
+              VerticalAlignment="Center" HorizontalAlignment="Center"
+              MinHeight="250" MinWidth="250"
+              Margin="8,8">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <!-- Поле для второго игрока (справа) -->
+            <Grid Name="Second_player_field" Grid.Row="2" Grid.Column="1"
+              VerticalAlignment="Center" HorizontalAlignment="Center"
+              MinHeight="250" MinWidth="250" Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <!-- Кнопки "Вписать" -->
+            <Button Name="BTTN_OK_1" Grid.Row="3" Grid.Column="0" 
+                BorderBrush="Gray" BorderThickness="2" Click="BTTN_OK_1_Click">
+                Вписать
+            </Button>
+            <Button Name="BTTN_OK_2" Grid.Row="3" Grid.Column="1" 
+                    HorizontalAlignment="Center" Margin="150.2,0,149.8,3.8" 
+                FontSize="14" FontWeight="Bold" Padding="4,2" VerticalAlignment="Bottom" Click="BTTN_OK_2_Click">
+                Вписать
+            </Button>
+            <!-- Таблица очков -->
+            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"> В ряду/столбце</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"> По диагонали</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"> 2 одинаковых числа</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"> 10 очков</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"> 20 очков</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center"> 3 одинаковых числа</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"> 40 очков</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"> 50 очков</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center"> 4 одинаковых числа</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center"> 160 очков</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center"> 170 очков</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center"> 2 пары одинаковых чисел</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"> 20 очков</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center"> 30 очков</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap"> 3 одинаковых числа + 2 одинаковых числа</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center"> 80 очков</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center"> 90 очков</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"> 
+                    5 последовательных чисел (не обязательно по порядку)
+                </TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center"> 50 очков</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center"> 60 очков</TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap">
+                    "1", "10", "11", "12", "13" (не обязательно по порядку)
+                </TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center"> 150 очков</TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Center"> 160 очков</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center"> 4 единицы</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center"> 200 очков</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Center"> 210 очков</TextBlock>
+            </Grid>
+            <Button x:Name="BTTN_Return" Grid.Row="5" Grid.ColumnSpan="2" 
+            	HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="341,0,340.8,0.4" MinWidth="55" MinHeight="22" MaxWidth="150" MaxHeight="100" Content="Выйти" Click="BTTN_Return_Click"/>
+        </Grid>
+    </ScrollViewer>
+</Window>
