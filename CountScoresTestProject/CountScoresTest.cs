@@ -6,9 +6,15 @@ namespace CountScoresTestProject
     //[TestFixture]
     public class CountScoresTest
     {
-        //[Test]
+        [Test]
         public void TestMethod1()
         {
+            //arrange
+
+            //act
+
+            //assert
+
         }
     }
 }
