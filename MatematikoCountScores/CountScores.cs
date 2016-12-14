@@ -14,7 +14,7 @@ namespace MatematikoCountScores
         /// <returns>JSON string with results</returns>
         public static string CountResults(int[] Field, int field_lgth)
         {
-            int[,] Field2D = ReshapeField(Field, field_lgth);
+            var Field2D = ReshapeField(Field, field_lgth);
             Results result = new Results();
             /* Подсчитывает результаты для игрока */
             int[] NumsRepetitions = new int[13];
