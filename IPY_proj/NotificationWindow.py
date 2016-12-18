@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import wpf
 import System.Windows
 
@@ -10,7 +11,7 @@ Label = System.Windows.Controls.Label
 
 # Кол-во очков, дающееся за выполнение каждого условия
 scores = {
-    "INLINE_3EqNum": 40, # 3 одинаковых числа
+    "INLINE_3EqNums": 40, # 3 одинаковых числа
     "INLINE_2EqNums": 10, # 2 одинаковых числа
     "INLINE_4EqNums": 160, # 4 одинаковых числа
     "INLINE_2PairsOfEqNums": 20, # 2 пары одинаковых чисел
@@ -37,18 +38,18 @@ postfix_list = ['2EqNums', '3EqNums', '4EqNums', '2PairsOfEqNums', '3EqNums_plus
 
 class NotificationWindow(Window):
     def __init__(self, res1, res2):
-        wpf.LoadComponent(self, 'NotificationWindow.xaml')
-        self.initUI(res1, res2)
+        wpf.LoadComponent(self, 'NotificationWindow.xaml')        
         self.player1_labels = {'2EqNums': self.Pl1_2EqNums, '3EqNums': self.Pl1_3EqNums, 
                                '4EqNums': self.Pl1_4EqNums, '2PairsOfEqNums': self.Pl1_2PairsOfEqNums,
-                               '3EqNums_plus_2EqNums': Pl1_3plus2EqNums, '5ConsecutiveNums': Pl1_5ConsecutiveNums, 
-                               'Three_1_Two_13': Pl1_Three_1_Two_13, '1_10_11_12_13': self.Pl1_1_10_11_12_13, 
+                               '3EqNums_plus_2EqNums': self.Pl1_3plus2EqNums, '5ConsecutiveNums': self.Pl1_5ConsecutiveNums, 
+                               'Three_1_Two_13': self.Pl1_Three_1_Two_13, '1_10_11_12_13': self.Pl1_1_10_11_12_13, 
                                '4Ones': self.Pl1_4Ones}
         self.player2_labels = {'2EqNums': self.Pl2_2EqNums, '3EqNums': self.Pl2_3EqNums, 
                                '4EqNums': self.Pl2_4EqNums, '2PairsOfEqNums': self.Pl2_2PairsOfEqNums,
-                               '3EqNums_plus_2EqNums': Pl2_3plus2EqNums, '5ConsecutiveNums': Pl2_5ConsecutiveNums, 
-                               'Three_1_Two_13': Pl2_Three_1_Two_13, '1_10_11_12_13': self.Pl2_1_10_11_12_13, 
+                               '3EqNums_plus_2EqNums': self.Pl2_3plus2EqNums, '5ConsecutiveNums': self.Pl2_5ConsecutiveNums, 
+                               'Three_1_Two_13': self.Pl2_Three_1_Two_13, '1_10_11_12_13': self.Pl2_1_10_11_12_13, 
                                '4Ones': self.Pl2_4Ones}
+        self.initUI(res1, res2)
 
     def initUI(self, res1, res2):
         ''' Выводим сообщение о победителе '''
@@ -63,8 +64,8 @@ class NotificationWindow(Window):
             self.player1_labels[p].Text = self.MessageBuilder(res1, p)
             self.player2_labels[p].Text = self.MessageBuilder(res2, p)
         
-        self.Pl1_Sum.Text = str(result['Sum'])           
-        self.Pl2_Sum.Text = str(result['Sum'])
+        self.Pl1_Sum.Text = str(res1['Sum'])           
+        self.Pl2_Sum.Text = str(res2['Sum'])
 
     def MessageBuilder(self, result, postfix):
         inline = 'INLINE_'+postfix

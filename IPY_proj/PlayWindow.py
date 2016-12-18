@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import wpf
 import System.Windows
 from Game import *

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountScoresTestProject", "C
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "IronPythonWPFDemo", "IronPythonWPFDemo\IronPythonWPFDemo.pyproj", "{D189D85A-4EBE-4D00-A125-EB58574FF151}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Matematiko_IronPythonManualTestProject", "Matematiko_IronPythonManualTestProject\Matematiko_IronPythonManualTestProject.pyproj", "{FDAE13D3-7D1C-4CA4-9346-A2E3FC3D6F83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,8 @@ Global
 		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D189D85A-4EBE-4D00-A125-EB58574FF151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D189D85A-4EBE-4D00-A125-EB58574FF151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAE13D3-7D1C-4CA4-9346-A2E3FC3D6F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAE13D3-7D1C-4CA4-9346-A2E3FC3D6F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
