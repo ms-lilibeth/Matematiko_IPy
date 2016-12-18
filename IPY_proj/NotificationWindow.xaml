@@ -143,7 +143,7 @@
                            FontFamily="Segoe UI Black" Margin="2,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                     100 очков
                 </TextBlock>
-                <!-- Очки для второго игрока -->
+                 <!--Очки для второго игрока--> 
                 <TextBlock Name="Pl2_2EqNums" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" 
                            FontFamily="Segoe UI Semibold" Margin="2,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock.Foreground>

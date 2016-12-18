@@ -1,9 +1,11 @@
 import clr
 import random
 import json
+import itertools
 from PlayWindow import PlayWindow
 from NotificationWindow import NotificationWindow
 from System.Windows.Media import Brushes
+from System import Array
 class Player:
     def __init__(self, field_lgth):
         self.field = [[0 for j in range(field_lgth)] for i in range(field_lgth)]
@@ -80,10 +82,15 @@ class Game:
         else:
             #TODO: вызов методов из dll для подсчета результатов
             #TODO: is it right?
-            field1D_1 = [i for i in j for j in player1.field]
-            field1D_2 = [i for i in j for j in player2.field]
-            res_str1 = _result_counter.CountResults(field1D_1, self.field_lgth)
-            res_str2 = _result_counter.CountResults(field1D_2, self.field_lgth)
+            field1D_1 = list(itertools.chain.from_iterable(player1.field))
+            field1D_2 = list(itertools.chain.from_iterable(player2.field))
+            arr1 = Array.CreateInstance(int, self.field_lgth*self.field_lgth)
+            arr2 = Array.CreateInstance(int, self.field_lgth*self.field_lgth)
+            for i in range(len(field1D_1)):
+                arr1[i] = field1D_1[i]
+                arr2[i] = field1D_2[i]
+            res_str1 = _result_counter.CountResults(arr1, self.field_lgth)
+            res_str2 = _result_counter.CountResults(arr2, self.field_lgth)
             res1 = json.loads(res_str1)
             res2 = json.loads(res_str2)
             notify_win = NotificationWindow(res1, res2)

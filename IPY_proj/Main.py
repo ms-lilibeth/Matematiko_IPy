@@ -1,7 +1,8 @@
 import wpf
 import clr
 import System.Windows
-
+import Game
+import PlayWindow
 # Initialization Constants
 Window = System.Windows.Window
 Application = System.Windows.Application
@@ -12,8 +13,15 @@ Label = System.Windows.Controls.Label
 class MainWindow(Window):
     def __init__(self):
         wpf.LoadComponent(self, 'MainWindow.xaml')
-        self.button_new_game.Content = "It works!"
+        self.button_new_game.Click += self.on_button_new_game_click
+
+    def on_button_new_game_click(self, sender, event):
+        #self.button_new_game.Content = "It works!"
+        new_game = Game()
+        play_window = PlayWindow(new_game, self)
+        self.Hide()
+        new_game.start(play_window)
     
 
 if __name__ == '__main__':    
-    Application().Run(MyWindow())
+    Application().Run(MainWindow())

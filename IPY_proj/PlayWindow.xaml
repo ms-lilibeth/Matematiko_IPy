@@ -18,7 +18,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <!-- Текущая карточка -->
+             Текущая карточка 
             <Label x:Name="LBL_Current_card"
             Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2" 
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -38,7 +38,7 @@
                    FontFamily="TruthCYR Regular" FontSize="14">
                 Второй игрок
             </Label>
-            <!-- Поле для первого игрока (слева) -->
+             Поле для первого игрока (слева) 
 
             <Grid x:Name="first_player_field" Grid.Row="2" Grid.Column="0"
               VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -59,7 +59,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
             </Grid>
-            <!-- Поле для второго игрока (справа) -->
+             Поле для второго игрока (справа) 
             <Grid x:Name="second_player_field" Grid.Row="2" Grid.Column="1"
               VerticalAlignment="Center" HorizontalAlignment="Center"
               MinHeight="250" MinWidth="250" Margin="8">
@@ -78,17 +78,17 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
             </Grid>
-            <!-- Кнопки "Вписать" -->
+             Кнопки "Вписать" 
             <Button x:Name="BTTN_OK_1" Grid.Row="3" Grid.Column="0" 
-                BorderBrush="Gray" BorderThickness="2" Click="BTTN_OK_1_Click">
+                BorderBrush="Gray" BorderThickness="2">
                 Вписать
             </Button>
             <Button x:Name="BTTN_OK_2" Grid.Row="3" Grid.Column="1" 
                     HorizontalAlignment="Center" Margin="150.2,0,149.8,3.8" 
-                FontSize="14" FontWeight="Bold" Padding="4,2" VerticalAlignment="Bottom" Click="BTTN_OK_2_Click">
+                FontSize="14" FontWeight="Bold" Padding="4,2" VerticalAlignment="Bottom">
                 Вписать
             </Button>
-            <!-- Таблица очков -->
+             Таблица очков 
             <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -139,7 +139,7 @@
                 <TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Center"> 210 очков</TextBlock>
             </Grid>
             <Button x:Name="BTTN_Return" Grid.Row="5" Grid.ColumnSpan="2" 
-            	HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="341,0,340.8,0.4" MinWidth="55" MinHeight="22" MaxWidth="150" MaxHeight="100" Content="Выйти" Click="BTTN_Return_Click"/>
+            	HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="341,0,340.8,0.4" MinWidth="55" MinHeight="22" MaxWidth="150" MaxHeight="100" Content="Выйти"/>
         </Grid>
     </ScrollViewer>
 </Window>

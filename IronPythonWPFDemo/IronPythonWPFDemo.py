@@ -2,6 +2,7 @@ import wpf
 import clr
 import sys
 import itertools
+import json
 from random import randint
 from System import Array
 from System.Windows import Application, Window
@@ -33,7 +34,10 @@ if __name__ == '__main__':
         #           arr[i, j] = field[i][j]  
         for i in range(len(field1D)):
             arr[i] = field1D[i]
-        res = result_counter.CountResults(arr, 5)        
+        res = result_counter.CountResults(arr, 5) 
+        #res = json.loads(res)
+        with open("res.txt", 'w') as f:            
+            f.write(res)
         Application().Run(MyWindow(res))
     except:
         w = Window()
