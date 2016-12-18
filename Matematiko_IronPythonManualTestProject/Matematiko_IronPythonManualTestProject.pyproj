@@ -32,11 +32,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Matematiko_IronPythonManualTestProject.xaml">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <Name>PresentationCore</Name>
       <AssemblyName>PresentationCore.dll</AssemblyName>
@@ -64,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{80659ab7-4d53-4e0c-8588-a766116cbd46}\2.7" />
+    <InterpreterReference Include="{fcc291aa-427c-498c-a4d7-4502d6449b8c}\2.7" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IPY_proj\Matematiko_IronPython.pyproj">

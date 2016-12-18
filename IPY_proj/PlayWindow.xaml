@@ -1,11 +1,12 @@
-<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<Window x:Class="Математико.PlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Математико: два игрока" MinHeight="450" MinWidth="525" 
+        Title="Математико" MinHeight="450" MinWidth="525" 
         ScrollViewer.HorizontalScrollBarVisibility="Visible"
         ScrollViewer.VerticalScrollBarVisibility="Visible" Closing="Window_Closing">
 
     <ScrollViewer>
-        <Grid x:Name="MainGrid" Background="#FFFBFF9A" >
+        <Grid x:Name="MainGrid" Background="#FFFBFF9A">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>

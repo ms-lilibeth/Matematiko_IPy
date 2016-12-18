@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import wpf
 import System.Windows
-from Game import *
-from Main import MainWindow
-
+from Game import Game
+from Player import Player
+from System.Windows.Media import Brushes
+from System.Windows import FontWeights
 # Initialization Constants
 Window = System.Windows.Window
 Application = System.Windows.Application
@@ -41,16 +42,16 @@ class FieldCell(Label):
 
 
 class PlayWindow(Window):
-    def __init__(self, game, start_window):
-        if not isinstance(game, Game) or not isinstance(start_window, MainWindow):
+    def __init__(self, game, return_callback):
+        if not isinstance(game, Game):
             raise ValueError("Play Window: irrelevant types passed to constructor")
-        self._this_game = game
-        self._start_window = start_window
+        self._this_game = game      
+        self._callback = return_callback  
         # Filling fields with cells
         for i in range(self._this_game.field_lgth):
             for j in range(self._this_game.field_lgth):                
-                tmp1 = FieldCell((i,j), this_game, this_game.player1);
-                tmp2 = FieldCell((i,j), this_game, this_game.player2);
+                tmp1 = FieldCell((i,j), self._this_game, self._this_game.player1);
+                tmp2 = FieldCell((i,j), self._this_game, self._this_game.player2);
                 Grid.SetRow(tmp1, i);
                 Grid.SetColumn(tmp1, j);
                 Grid.SetRow(tmp2, i);
@@ -75,9 +76,9 @@ class PlayWindow(Window):
             self._this_game.next_move()
 
     def on_BTTN_return_click(self, sender, e):
-        self._start_window.Show()
+        self._return_callback()
         self.Close()
 
     def on_window_closing(self, sender, e):
-        self._start_window.Show()
+        self._return_callback()
               
