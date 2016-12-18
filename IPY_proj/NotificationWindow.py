@@ -48,66 +48,136 @@ class NotificationWindow(Window):
         '''Расписываем очки для каждого игрока'''
         # прописать для одного, а для другого сделать Ctrl+C, Ctrl+V и поменять левую часть выражения
         # ===================== Player1 ========================
-        result = res1
+        result = res1        
         if result['INLINE_1_10_11_12_13']!=0 or result['BIAS_1_10_11_12_13']!=0:
-            self.Pl1_1_10_11_12_13.Text = self.MessageBuilder(result['INLINE_1_10_11_12_13'] * scores['INLINE_1_10_11_12_13'],\
-               result['INLINE_1_10_11_12_13'], result['BIAS_1_10_11_12_13'] * scores['BIAS_1_10_11_12_13'], result['BIAS_1_10_11_12_13'])
+            inline_sum = result['INLINE_1_10_11_12_13'] * scores['INLINE_1_10_11_12_13']
+            inline_qty = result['INLINE_1_10_11_12_13']
+            bias_sum = result['BIAS_1_10_11_12_13'] * scores['BIAS_1_10_11_12_13']
+            bias_qty = result['BIAS_1_10_11_12_13']
+            self.Pl1_1_10_11_12_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+
         if result['INLINE_2EqNums'] != 0 or result['BIAS_2EqNums'] != 0:
-            self.Pl1_2EqNums.Text = self.MessageBuilder(result['INLINE_2EqNums'] * scores['INLINE_2EqNums'],\
-               result['INLINE_2EqNums'], result['BIAS_2EqNums'] * scores['BIAS_2EqNums'], result['BIAS_2EqNums'])
+            inline_sum = result['INLINE_2EqNums'] * scores['INLINE_2EqNums']
+            inline_qty = result['INLINE_2EqNums']
+            bias_sum = result['BIAS_2EqNums'] * scores['BIAS_2EqNums']
+            bias_qty = result['BIAS_2EqNums']
+            self.Pl1_2EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_2PairsOfEqNums'] != 0 or result['BIAS_2PairsOfEqNums'] != 0:
-            self.Pl1_2PairsOfEqNums.Text = self.MessageBuilder(result['INLINE_2PairsOfEqNums'] * scores['INLINE_2PairsOfEqNums'], \
-                result['INLINE_2PairsOfEqNums'], result['BIAS_2PairsOfEqNums'] * scores['BIAS_2PairsOfEqNums'], result['BIAS_2PairsOfEqNums'])
+            inline_sum = result['INLINE_2PairsOfEqNums'] * scores['INLINE_2PairsOfEqNums']
+            inline_qty = result['INLINE_2PairsOfEqNums']
+            bias_sum = result['BIAS_2PairsOfEqNums'] * scores['BIAS_2PairsOfEqNums']
+            bias_qty = result['BIAS_2PairsOfEqNums']
+            self.Pl1_1_10_11_12_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_3EqNums'] != 0 or result['BIAS_3EqNums'] != 0:
-            self.Pl1_3EqNums.Text = self.MessageBuilder(result['INLINE_3EqNums'] * scores['INLINE_3EqNums'], result['INLINE_3EqNums'], \
-                result['BIAS_3EqNums'] * scores['BIAS_3EqNums'], result['BIAS_3EqNums'])
+            inline_sum = result['INLINE_3EqNums'] * scores['INLINE_3EqNums']
+            inline_qty = result['INLINE_3EqNums']
+            bias_sum = result['BIAS_3EqNums'] * scores['BIAS_3EqNums']
+            bias_qty = result['BIAS_3EqNums']
+            self.Pl1_3EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_3EqNums_plus_2EqNums'] != 0 or result['BIAS_3EqNums_plus_2EqNums'] != 0:
-            self.Pl1_3plus2EqNums.Text = self.MessageBuilder(result['INLINE_3EqNums_plus_2EqNums'] * scores['INLINE_3EqNums_plus_2EqNums'],\
-               result['INLINE_3EqNums_plus_2EqNums'], result['BIAS_3EqNums_plus_2EqNums'] * scores['BIAS_3EqNums_plus_2EqNums'], \
-               result['BIAS_3EqNums_plus_2EqNums'])
+            inline_sum = result['INLINE_3EqNums_plus_2EqNums'] * scores['INLINE_3EqNums_plus_2EqNums']
+            inline_qty = result['INLINE_3EqNums_plus_2EqNums']
+            bias_sum = result['BIAS_3EqNums_plus_2EqNums'] * scores['BIAS_3EqNums_plus_2EqNums']
+            bias_qty = result['BIAS_3EqNums_plus_2EqNums']
+            self.Pl1_3plus2EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_4EqNums'] != 0 or result['BIAS_4EqNums'] != 0:
-            self.Pl1_4EqNums.Text = self.MessageBuilder(result['INLINE_4EqNums'] * scores['INLINE_4EqNums'],\
-               result['INLINE_4EqNums'], result['BIAS_4EqNums'] * scores['BIAS_4EqNums'], result['BIAS_4EqNums'])
+            inline_sum = result['INLINE_4EqNums'] * scores['INLINE_4EqNums']
+            inline_qty = result['INLINE_4EqNums']
+            bias_sum = result['BIAS_4EqNums'] * scores['BIAS_4EqNums']
+            bias_qty = result['BIAS_4EqNums']
+            self.Pl1_4EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_4Ones'] != 0 or result['BIAS_4Ones'] != 0:
-            self.Pl1_4Ones.Text = self.MessageBuilder(result['INLINE_4Ones'] * scores['INLINE_4Ones'], \
-                result['INLINE_4Ones'], result['BIAS_4Ones'] * scores['BIAS_4Ones'], result['BIAS_4Ones'])
+            inline_sum = result['INLINE_4Ones'] * scores['INLINE_4Ones']
+            inline_qty = result['INLINE_4Ones']
+            bias_sum = result['BIAS_4Ones'] * scores['BIAS_4Ones']
+            bias_qty = result['BIAS_4Ones']
+            self.Pl1_4Ones.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_5ConsecutiveNums'] != 0 or result['BIAS_5ConsecutiveNums'] != 0:
-            self.Pl1_5ConsecutiveNums.Text = self.MessageBuilder(result['INLINE_5ConsecutiveNums'] * scores['INLINE_5ConsecutiveNums'],\
-               result['INLINE_5ConsecutiveNums'], result['BIAS_5ConsecutiveNums'] * scores['BIAS_5ConsecutiveNums'], result['BIAS_5ConsecutiveNums'])
+            inline_sum = result['INLINE_5ConsecutiveNums'] * scores['INLINE_5ConsecutiveNums']
+            inline_qty = result['INLINE_5ConsecutiveNums']
+            bias_sum = result['BIAS_5ConsecutiveNums'] * scores['BIAS_5ConsecutiveNums']
+            bias_qty = result['BIAS_5ConsecutiveNums']
+            self.Pl1_5ConsecutiveNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_Three_1_Two_13'] != 0 or result['BIAS_Three_1_Two_13'] != 0:
-            self.Pl1_Three_1_Two_13.Text = self.MessageBuilder(result['INLINE_Three_1_Two_13'] * scores['INLINE_Three_1_Two_13'], \
-                result['INLINE_Three_1_Two_13'], result['BIAS_Three_1_Two_13'] * scores['BIAS_Three_1_Two_13'], result['BIAS_Three_1_Two_13'])
+            inline_sum = result['INLINE_Three_1_Two_13'] * scores['INLINE_Three_1_Two_13']
+            inline_qty = result['INLINE_Three_1_Two_13']
+            bias_sum = result['BIAS_Three_1_Two_13'] * scores['BIAS_Three_1_Two_13']
+            bias_qty = result['BIAS_Three_1_Two_13']
+            self.Pl1_Three_1_Two_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+
         self.Pl1_Sum.Text = str(result['Sum'])
         # ===================== Player2 ========================
         result = res2
         if result['INLINE_1_10_11_12_13']!=0 or result['BIAS_1_10_11_12_13']!=0:
-            self.Pl1_1_10_11_12_13.Text = self.MessageBuilder(result['INLINE_1_10_11_12_13'] * scores['INLINE_1_10_11_12_13'],\
-               result['INLINE_1_10_11_12_13'], result['BIAS_1_10_11_12_13'] * scores['BIAS_1_10_11_12_13'], result['BIAS_1_10_11_12_13'])
+            inline_sum = result['INLINE_1_10_11_12_13'] * scores['INLINE_1_10_11_12_13']
+            inline_qty = result['INLINE_1_10_11_12_13']
+            bias_sum = result['BIAS_1_10_11_12_13'] * scores['BIAS_1_10_11_12_13']
+            bias_qty = result['BIAS_1_10_11_12_13']
+            self.Pl2_1_10_11_12_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+
         if result['INLINE_2EqNums'] != 0 or result['BIAS_2EqNums'] != 0:
-            self.Pl2_2EqNums.Text = self.MessageBuilder(result['INLINE_2EqNums'] * scores['INLINE_2EqNums'],\
-               result['INLINE_2EqNums'], result['BIAS_2EqNums'] * scores['BIAS_2EqNums'], result['BIAS_2EqNums'])
+            inline_sum = result['INLINE_2EqNums'] * scores['INLINE_2EqNums']
+            inline_qty = result['INLINE_2EqNums']
+            bias_sum = result['BIAS_2EqNums'] * scores['BIAS_2EqNums']
+            bias_qty = result['BIAS_2EqNums']
+            self.Pl2_2EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_2PairsOfEqNums'] != 0 or result['BIAS_2PairsOfEqNums'] != 0:
-            self.Pl2_2PairsOfEqNums.Text = self.MessageBuilder(result['INLINE_2PairsOfEqNums'] * scores['INLINE_2PairsOfEqNums'], \
-                result['INLINE_2PairsOfEqNums'], result['BIAS_2PairsOfEqNums'] * scores['BIAS_2PairsOfEqNums'], result['BIAS_2PairsOfEqNums'])
+            inline_sum = result['INLINE_2PairsOfEqNums'] * scores['INLINE_2PairsOfEqNums']
+            inline_qty = result['INLINE_2PairsOfEqNums']
+            bias_sum = result['BIAS_2PairsOfEqNums'] * scores['BIAS_2PairsOfEqNums']
+            bias_qty = result['BIAS_2PairsOfEqNums']
+            self.Pl2_1_10_11_12_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_3EqNums'] != 0 or result['BIAS_3EqNums'] != 0:
-            self.Pl2_3EqNums.Text = self.MessageBuilder(result['INLINE_3EqNums'] * scores['INLINE_3EqNums'], result['INLINE_3EqNums'], \
-                result['BIAS_3EqNums'] * scores['BIAS_3EqNums'], result['BIAS_3EqNums'])
+            inline_sum = result['INLINE_3EqNums'] * scores['INLINE_3EqNums']
+            inline_qty = result['INLINE_3EqNums']
+            bias_sum = result['BIAS_3EqNums'] * scores['BIAS_3EqNums']
+            bias_qty = result['BIAS_3EqNums']
+            self.Pl2_3EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_3EqNums_plus_2EqNums'] != 0 or result['BIAS_3EqNums_plus_2EqNums'] != 0:
-            self.Pl2_3plus2EqNums.Text = self.MessageBuilder(result['INLINE_3EqNums_plus_2EqNums'] * scores['INLINE_3EqNums_plus_2EqNums'],\
-               result['INLINE_3EqNums_plus_2EqNums'], result['BIAS_3EqNums_plus_2EqNums'] * scores['BIAS_3EqNums_plus_2EqNums'], \
-               result['BIAS_3EqNums_plus_2EqNums'])
+            inline_sum = result['INLINE_3EqNums_plus_2EqNums'] * scores['INLINE_3EqNums_plus_2EqNums']
+            inline_qty = result['INLINE_3EqNums_plus_2EqNums']
+            bias_sum = result['BIAS_3EqNums_plus_2EqNums'] * scores['BIAS_3EqNums_plus_2EqNums']
+            bias_qty = result['BIAS_3EqNums_plus_2EqNums']
+            self.Pl2_3plus2EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_4EqNums'] != 0 or result['BIAS_4EqNums'] != 0:
-            self.Pl2_4EqNums.Text = self.MessageBuilder(result['INLINE_4EqNums'] * scores['INLINE_4EqNums'],\
-               result['INLINE_4EqNums'], result['BIAS_4EqNums'] * scores['BIAS_4EqNums'], result['BIAS_4EqNums'])
+            inline_sum = result['INLINE_4EqNums'] * scores['INLINE_4EqNums']
+            inline_qty = result['INLINE_4EqNums']
+            bias_sum = result['BIAS_4EqNums'] * scores['BIAS_4EqNums']
+            bias_qty = result['BIAS_4EqNums']
+            self.Pl2_4EqNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_4Ones'] != 0 or result['BIAS_4Ones'] != 0:
-            self.Pl2_4Ones.Text = self.MessageBuilder(result['INLINE_4Ones'] * scores['INLINE_4Ones'], \
-                result['INLINE_4Ones'], result['BIAS_4Ones'] * scores['BIAS_4Ones'], result['BIAS_4Ones'])
+            inline_sum = result['INLINE_4Ones'] * scores['INLINE_4Ones']
+            inline_qty = result['INLINE_4Ones']
+            bias_sum = result['BIAS_4Ones'] * scores['BIAS_4Ones']
+            bias_qty = result['BIAS_4Ones']
+            self.Pl2_4Ones.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_5ConsecutiveNums'] != 0 or result['BIAS_5ConsecutiveNums'] != 0:
-            self.Pl2_5ConsecutiveNums.Text = self.MessageBuilder(result['INLINE_5ConsecutiveNums'] * scores['INLINE_5ConsecutiveNums'],\
-               result['INLINE_5ConsecutiveNums'], result['BIAS_5ConsecutiveNums'] * scores['BIAS_5ConsecutiveNums'], result['BIAS_5ConsecutiveNums'])
+            inline_sum = result['INLINE_5ConsecutiveNums'] * scores['INLINE_5ConsecutiveNums']
+            inline_qty = result['INLINE_5ConsecutiveNums']
+            bias_sum = result['BIAS_5ConsecutiveNums'] * scores['BIAS_5ConsecutiveNums']
+            bias_qty = result['BIAS_5ConsecutiveNums']
+            self.Pl2_5ConsecutiveNums.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         if result['INLINE_Three_1_Two_13'] != 0 or result['BIAS_Three_1_Two_13'] != 0:
-            self.Pl2_Three_1_Two_13.Text = self.MessageBuilder(result['INLINE_Three_1_Two_13'] * scores['INLINE_Three_1_Two_13'], \
-                result['INLINE_Three_1_Two_13'], result['BIAS_Three_1_Two_13'] * scores['BIAS_Three_1_Two_13'], result['BIAS_Three_1_Two_13'])
+            inline_sum = result['INLINE_Three_1_Two_13'] * scores['INLINE_Three_1_Two_13']
+            inline_qty = result['INLINE_Three_1_Two_13']
+            bias_sum = result['BIAS_Three_1_Two_13'] * scores['BIAS_Three_1_Two_13']
+            bias_qty = result['BIAS_Three_1_Two_13']
+            self.Pl2_Three_1_Two_13.Text = self.MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty)
+            
         self.Pl2_Sum.Text = str(result['Sum'])
 
     def MessageBuilder(inline_sum, inline_qty, bias_sum, bias_qty):
