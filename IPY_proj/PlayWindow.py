@@ -5,6 +5,7 @@ from Game import Game
 from Player import Player
 from System.Windows.Media import Brushes
 from System.Windows import FontWeights
+from System.Windows.Markup import XamlReader
 # Initialization Constants
 Window = System.Windows.Window
 Application = System.Windows.Application
@@ -35,18 +36,20 @@ class FieldCell(Label):
         #self.MouseDoubleClick  = self.OnMouseDoubleClick    
     
     def OnMouseDoubleClick(self, e):
-        base.OnMouseDoubleClick(e);
-        if _this_player.get_the_value(self._coords)==0:        
-            self.Content = _this_game.get_current_card()
+        #base.OnMouseDoubleClick(e);
+        if self._this_player.get_the_value(self._coords)==0:        
+            self.Content = self._this_game.get_current_card()
             self._this_player.tmp_cell_chosen(self, self._coords);
 
 
 class PlayWindow(Window):
-    def __init__(self, game, return_callback):
+    def __init__(self, game, return_callback):        
+        wpf.LoadComponent(self, 'PlayWindow.xaml')             
         if not isinstance(game, Game):
-            raise ValueError("Play Window: irrelevant types passed to constructor")
+            raise ValueError("Play Window: irrelevant types passed to constructor")        
+        
         self._this_game = game      
-        self._callback = return_callback  
+        self._return_callback = return_callback  
         # Filling fields with cells
         for i in range(self._this_game.field_lgth):
             for j in range(self._this_game.field_lgth):                
@@ -55,7 +58,7 @@ class PlayWindow(Window):
                 Grid.SetRow(tmp1, i);
                 Grid.SetColumn(tmp1, j);
                 Grid.SetRow(tmp2, i);
-                Grid.SetColumn(tmp2, j);
+                Grid.SetColumn(tmp2, j);                
                 self.first_player_field.Children.Add(tmp1);
                 self.second_player_field.Children.Add(tmp2)
         # Behavior
@@ -63,7 +66,7 @@ class PlayWindow(Window):
         self.BTTN_OK_2.Click += self.on_BTTN_OK_2_click
         self.BTTN_Return.Click += self.on_BTTN_return_click
         # Loading window
-        wpf.LoadComponent(self, 'PlayWindow.xaml')
+        #wpf.LoadComponent(self, 'PlayWindow.xaml')
 
     def on_BTTN_OK_1_click(self, sender, e):        
         self._this_game.player1.move_confirmed = True

@@ -20,7 +20,7 @@ class MainWindow(Window):
     def on_button_new_game_click(self, sender, event):
         #self.button_new_game.Content = "It works!"
         new_game = Game()
-        play_window = PlayWindow(new_game, self.Show)
+        play_window = PlayWindow(new_game, self.Show)        
         self.Hide()
         new_game.start(play_window)
     

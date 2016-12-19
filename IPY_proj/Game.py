@@ -15,7 +15,7 @@ class Game:
         self.player2 = Player(self.field_lgth)
         self._this_window = None
         self._cards = []        
-        self._cards_qty = 25
+        self._cards_num = 25
         self._current_card = 0
         clr.AddReferenceByName("MatematikoCountScores.dll")
         from MatematikoCountScores import ResultCounter
@@ -30,10 +30,10 @@ class Game:
         return False        
 
     def _init_cards(self, cards_num):
-        ''' Заполняет стек из 25 карточек случайными числами от 1 до 13 
+        ''' Заполняет стек из cards_num карточек случайными числами от 1 до 13 
              (каждое повторяется не более 4х раз) '''
         repetition_list = [0 for i in range(13)]
-        while len(self._cards) != self._cards_qty:
+        while len(self._cards) != self._cards_num:
             tmp = random.randint(1, 13) # endpoints included
             if repetition_list[tmp-1] < 4:
                 self._cards.append(tmp)
@@ -48,7 +48,7 @@ class Game:
 
     def start(self, play_window):
         self._this_window = play_window
-        self._init_cards()
+        self._init_cards(self._cards_num)
         self._current_card = self._next_card()
         self._this_window.LBL_Current_card.Content = self._current_card
         self._this_window.Show()

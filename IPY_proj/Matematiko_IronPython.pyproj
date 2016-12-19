@@ -34,6 +34,9 @@
     <Compile Include="NotificationWindow.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Player.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlayWindow.py">
       <SubType>Code</SubType>
     </Compile>
