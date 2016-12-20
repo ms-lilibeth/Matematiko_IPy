@@ -65,9 +65,7 @@ class PlayWindow(Window):
         self.BTTN_OK_1.Click += self.on_BTTN_OK_1_click
         self.BTTN_OK_2.Click += self.on_BTTN_OK_2_click
         self.BTTN_Return.Click += self.on_BTTN_return_click
-        # Loading window
-        #wpf.LoadComponent(self, 'PlayWindow.xaml')
-
+        
     def on_BTTN_OK_1_click(self, sender, e):        
         self._this_game.player1.move_confirmed = True
         if self._this_game.both_confirmed:

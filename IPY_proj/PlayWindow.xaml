@@ -4,7 +4,34 @@
         Title="Математико: два игрока" MinHeight="450" MinWidth="525" 
         ScrollViewer.HorizontalScrollBarVisibility="Visible"
         ScrollViewer.VerticalScrollBarVisibility="Visible">
+    <Window.Resources>
+        <!-- Стиль кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Margin" Value="0,3"></Setter>
+            <Setter Property="Padding" Value="6,4"></Setter>
+            <Setter Property="Background" Value="#FFF9EE82"></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+            <Setter Property="FontFamily" Value="TruthCYR Medium"></Setter>
+        </Style>
 
+        <!-- Стиль ячейки игрового поля -->
+        <Style x:Key="FieldCell" TargetType="Label">
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="Background" Value="LightYellow"></Setter>
+        </Style>
+    </Window.Resources>
     <ScrollViewer>
         <Grid x:Name="MainGrid" Background="#FFFBFF9A">
             <Grid.RowDefinitions>
@@ -85,8 +112,7 @@
                 Вписать
             </Button>
             <Button x:Name="BTTN_OK_2" Grid.Row="3" Grid.Column="1" 
-                    HorizontalAlignment="Center" Margin="150.2,0,149.8,3.8" 
-                FontSize="14" FontWeight="Bold" Padding="4,2" VerticalAlignment="Bottom">
+                    BorderBrush="Gray" BorderThickness="2">
                 Вписать
             </Button>
             <!-- Таблица очков -->
